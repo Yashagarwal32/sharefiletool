@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LinkShare-Fast File Share website
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <a class='navbar-brand' href="http://localhost:3000/">
+            <img src="/imgs/share.png" alt="share" style="margin-top:-20px;margin-left:-700px;width:50px;">
+            </a>
+         
+     <div style="margin-top:-100px;margin-bottom:50px;margin-left:1250px">   
+           
+        <a class='navbar-brand' href="https://www.facebook.com/profile.php?id=100026326683968">
+        <img src="/imgs/fb.jpg" alt="fb" style="width:40px;border-radius:50%;">
+        </a>
+
+
+        <a class='navbar-brand' href="https://www.instagram.com/yashagarwal2/">
+            <img src="/imgs/insta.jpg" alt="instagram" style="width:40px;border-radius:50%;">
+            </a>
+
+            <a class='navbar-brand' href="https://twitter.com/YashAga30466735">
+                <img src="/imgs/twit.jpg" alt="twitter" style="width:40px;border-radius:50%;">
+                </a>
+                <a class='navbar-brand' href="mailto:yashagarwal3221@gmail.com">
+                <img src="/imgs/mail.jpg" alt="mail" style="width:40px;border-radius:50%;">
+                </a>
+    </div>
+        <section class="upload-container" >
+            <div class="drop-zone">
+                <div class="icon-container">
+                    <img src="/imgs/share.png" draggable="false" class="center">
+                    <img src="/imgs/share.png" draggable="false" class="left">
+                    <img src="/imgs/share.png" draggable="false" class="right">
+                    
+                </div>
+                
+                
+                <div class="title">Drop your files here or, <span class="Browsebutton">browse</span> </div>
+            </div>
+            <div class="progress-container">
+                <div class="bg-progress">
+                    <div class="title"style="margin:0px 15px;" >Uploading...</div>
+                    <div class="percent-container" style="margin:0px 15px;font-size: 13px;font-weight: bold;"><span id="percent">0</span>%</div>
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="sharing-container">
+                <p class="expire">Link expires in 24 hours</p>
+                <div class="input-container">
+                <input type="text" id="fileURL" readonly>
+                <img src="/imgs/copy.png" style="width:20px;height:20px"alt="" id="copybtn">
+                    </div>
+                    <p>or Send via Email</p>
+                    <div class="email-container">
+                        <form action="http://localhost:3000/uploadfile" method="get" id="emailform">
+                            <input type="file" id="fileinput" name="pho">
+                            <input type="text" style="display:none;" id="fff" name="phot">
+                
+                            <div class="filed">
+                                <label for="sender">Your Email</label>
+                                <input type="email" required name="fromemail" id="sender" value="yashagarwal3221@gmail.com" readonly>
+
+                            </div>
+
+                            <div class="filed">
+                                <label for="receiver">Receiver's Email</label>
+                                <input type="email" required name="toemail" id="receiver">
+                                
+                            </div>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+            </div>
+        </section>
+        <button type="button" id="showfeed" onclick="showmefeed()">feedback</button>
+            
+        <div id="feed" style="display: none;">
+            <button type="button" id="closeit" onclick="showmebutton()">X</button>
+        
+            <form action="http://localhost:3000/feedback" method="post">
+                <b>Name :</b> <input type="text" name="name1" required><br><br>
+                <b>Gmail :</b> <input type="email" name="email1" required><br><br>
+                <b>Feed :</b> <textarea type="text" name="query" rows="5" cols="20"required></textarea><br><br>
+                <input type="submit" name="submit" style="margin-left:100px;align:center; background-color:#FB4570;border:3px solid violet;cursor: pointer;font-weight: bold;">
+            </form>
+        </div>
+        <script src="/js/index.js"></script>
+    </body>
+</html>
