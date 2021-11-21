@@ -1,0 +1,254 @@
+:root {
+    --main-bg-colo:#FF8370;
+    --border-color: #FB4570;
+    --container-width: 500px;
+}
+body, html{
+    font-family:system-ui;
+    background-image: url(/imgs/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body, .drop-zone,.upload-container{
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-direction: column;
+    
+}
+.drop-zone
+{
+    width: 500px;
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    margin : 30px;
+    border-radius:10px;
+    transition:all .2s ease;
+
+}
+
+
+.dragged.drop-zone{
+    background: var(--main-bg-color);
+    border-color: #FB6B90;
+}
+
+.upload-container{
+    background: #ffffff;
+border-radius:25px;
+box-shadow: 0px 20px 20px #0000002e;
+}
+
+.icon-container img
+{
+    width:75px;
+    position:absolute;
+    transition : transform 250ms ease-in-out;
+}
+.icon-container .center
+{
+    z-index: 2;
+
+}
+
+.icon-container{
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+.icon-container .right , .icon-container .left
+{
+    filter:grayscale(0.5);
+    transform:scale(0.9);
+}
+.dragged .icon-container .right
+{
+    transform: rotate(10deg) translateX(20px) scale(0.9);
+}
+
+.dragged .icon-container .left
+{
+    transform: rotate(-10deg) translateX(-20px) scale(0.9);
+}
+
+.dragged .icon-container .center
+{
+    transform: translateY(-5px);
+}
+
+#fileinput{
+    display:none;
+}
+
+.Browsebutton
+{
+    color:#FB6B90;
+    cursor:pointer;
+
+}
+
+.progress-container{
+    width: var(--container-width);
+    height: 70px;
+    border: 2px solid var(--main-bg-color);
+    margin-bottom: 25px;
+    border-radius:10px;
+    position:relative;
+    display:none;
+}
+
+.progress-container .bg-progress
+{
+    background: var(--main-bg-color);
+    width:0%;
+    height:100%;
+    transform-origin:left;
+    border-radius: 3%;
+    transition: width 0.25s linear;
+    
+}
+
+.progress-bar
+{
+    height:3px;
+    width:95%;
+    margin-left:15px;
+    background:#FB6B90 ;
+    border-radius: 5px;
+    /*transform: scaleX(0);
+    transition: transform 0.25s linear;*/
+    
+}
+.sharing-container{
+    width: var(--container-width);
+    margin-bottom: 10px;
+    display:none;
+
+}
+
+p{
+    opacity: 0.8;
+    margin-bottom: 10px;
+    text-align: center;;
+}
+
+.sharing-container .input-container{
+    position:relative;
+}
+.sharing-container .input-container input{
+    width:100%;
+    border: 2px dashed var(--border-color);
+    border-radius:6px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size:20px;
+    background: #FB8DA0;
+    color:#0000008c;
+
+}
+
+.input-container img{
+    position: absolute;
+    height:22px;
+    width:30px;
+    right: 7px;
+    top: 12px;
+    background: #f7fdff;
+    cursor: pointer;
+}
+
+.email-container
+{
+    display: flex;
+    align-items: center;
+}
+
+.email-container form{
+    width:100%;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding:15px;
+    flex-direction: column;
+    
+    display: flex;
+    align-items: center;
+
+}
+
+.email-container .filed
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width:400px;
+}
+
+.email-container label{
+    font-size: 18px;
+}
+.email-container input{
+    font-size: 18px;
+    border:none;
+    border-bottom: 2px solid var(--border-color);
+    text-align: center;
+
+}
+
+.email-container input:focus{
+    outline:none;
+}
+
+.email-container button{
+    font-size: 18px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background:#FB8DA0;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#showfeed{
+    height:40px;
+    width:100px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: var(--border-color);
+    cursor: pointer;
+    margin-top:240px;
+    margin-left:1300px;
+}
+
+#feed{
+    border:2px solid var(--border-color);
+    background-color: var(--main-bg-colo);
+    border-radius: 10px;
+    margin-top: -100px;
+    margin-left: 1210px;
+
+
+}
+
+#feed input,#feed textarea{
+    border:none;
+    background-color: var(--main-bg-colo);
+    
+    border-bottom:2px solid var(--border-color);
+    border-radius: 6px;
+
+}
+#feed input:focus{
+    outline: none;
+}
+#closeit{
+    background-color:red;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-left: 210px;
+    margin-top: -20px;
+    cursor: pointer;
+}
